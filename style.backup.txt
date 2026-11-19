@@ -1,0 +1,27 @@
+<footer>
+        <p>&copy; 2026 Compus Bites. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function orderFood(foodName, price) {
+            cart.push({name: foodName, price: price});
+            total = total + price;
+
+            document.getElementById("cartItems").innerHTML =
+                cart.map(item => "<li>" + item.name +
+                " - KSh " + item.price + "</li>").join("");
+
+            document.getElementById("cartTotal").innerText =
+                "Total: KSh " + total;
+        }
+    </script>
+
+    <h2>My Shopping Cart</h2>
+    <ul id="cartItems"></ul>
+    <h3 id="cartTotal">Total: KSh 0</h3>
+
+</body>
+</html>
